@@ -1,0 +1,959 @@
+/* google font 
+font-family: 'Macondo', cursive;
+
+ */
+
+/* Start main roles  */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 ;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    /* font-family: 'Macondo', cursive; */
+    /* background-color: #000000; */
+}
+ul{
+    list-style: none;
+}
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    .container{
+        width: 750px;
+    }
+} 
+@media (min-width: 992px) {
+    .container{
+        width: 1070px;
+    }
+    header nav  .tooglebar{
+        display: none;
+    }
+}
+
+:root{
+    --main-color:#020f34;
+    --text-color: #ff00ae;
+    --section-padding:100px;
+}
+.clear-fix {clear: both;}
+/* End main roles  */
+/* Component */
+.section-tour{
+    padding: 60px 100px;
+    background-color:#345184;
+}
+.main-heading{
+    text-align: center;
+    color:  var(--text-color);
+    
+}
+.main-heading h2{
+    font-size:40px;
+    position: relative;
+    margin-bottom:70px;
+    text-transform: uppercase;
+}
+.main-heading h2::before{
+    content:"";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height:2px;
+    background-color:  var(--text-color);
+    bottom:-30px;
+    width:200px;
+}
+.main-heading h2::after{
+    content:"";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height:15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 1px solid var(--text-color);
+    background-color: var(--text-color);
+    bottom:-38px;
+    background-color:#020f34;
+    
+}
+.main-heading p{
+    width:550px;
+    margin: 0 auto 100px;
+    max-width: 100%;
+    line-height: 1;
+
+}
+/* Header  */
+header{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+header .container{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: relative;
+    min-height: 100px;
+}
+header .container::after{
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: var(--text-color);
+    bottom: 7px;
+    width: calc(100% - 30px);
+    left:20px;
+    z-index: -2;
+    
+}
+header .logo img{
+    width:70px;
+
+}
+header span{
+    color: var(--text-color);
+    text-decoration:none;
+    display: inline-block;
+    font-size:20px;
+}
+header nav{
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+header nav  .tooglebar{
+    color: var(--text-color);
+    font-size:20px;
+
+}
+header nav ul{
+    display: flex;
+    
+}
+@media (max-width: 1000px){
+    header nav ul{
+        display: none;
+        
+    }
+    header nav .tooglebar:hover + ul{
+        display: flex;
+        flex-direction: column;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+    }
+    header nav .tooglebar + ul li a{
+        padding:10px;
+    }
+}
+header nav ul li a{
+    text-decoration: none;
+    display:block;
+    font-size:20px;
+    padding:30px 20px;
+    transition:0.3s;
+    color: var(--text-color);
+    z-index: 9;
+}
+header nav ul li a.active,
+header nav ul li a:hover{
+    color:#020f34;
+    border-bottom: 3px solid #020f34;
+    z-index: 3;
+}
+header .form{
+    width: 40px;
+    height: 30px;
+    position: relative;
+    margin-left: 30px;
+    border-left: 1px solid var(--main-color);
+}
+header .form i{
+    color: var(--text-color);
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: flex-end;
+    right:0;
+}
+
+/* LANDING SECTION  */
+.landing{
+    min-height:100vh;
+    color: var(--text-color);
+    background-color:#000000;
+    background-image: url("../images/norway.jpg");
+    background-size: cover;
+    position: relative;
+}
+.landing .overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(0 0 0 / 40%);
+}
+.landing .text h2{
+    font-family: 'Water Brush', cursive;
+    padding-bottom: 20px;
+    font-size:50px;
+    letter-spacing: 6px;
+    max-width: 500px;
+}
+.landing .text{
+    width: 40%;
+    position: absolute;
+    left: 0;
+    top:50%;
+    transform: translateY(-50%);
+    padding:50px 10px 30px 90px;
+    background-color:rgb(0 0 0 / 60%); 
+    font-size:20px;
+    letter-spacing: 2px;
+    display: flex;
+}
+
+.landing .text .content {
+    max-width: 500px;
+}
+
+.landing .change-background{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+@media (max-width: 1000px){
+    .landing .text{
+        width:100%;
+    }
+    .landing .text .content{
+        max-width: 100%;
+    }
+    .landing .change-background{
+        display:none;
+    }
+}
+.landing .fa-angle-left{
+    left:50px;
+}
+.landing .fa-angle-right{
+    right:50px;
+}
+.landing .bullets{
+    position: absolute;
+    left:50%;
+    transform: translateY(-50%);
+    bottom: 20px;
+    display: flex;
+}
+.landing .bullets li{
+    width:15px;
+    height:15px;
+    border: 1px solid  var(--text-color);
+    border-radius: 50%;
+    margin: 2px;
+    
+}
+.landing .bullets li.active{
+    background-color:  var(--text-color);
+}
+/* ***************************************** */
+/* TOP NORWAY TRAVEL IDEAS */
+.section-tour .container{
+    width: 80%;
+    
+}
+.tour-choice{
+    padding-top:var(--section-padding);
+    padding-bottom:var(--section-padding);
+}
+#tour1{
+    background-image: url(../images/beach.webp);
+    background-size: cover;
+    
+}
+#tour2{
+    background-image: url(../images/sky.jpg);
+    background-size: cover;
+}
+#tour3{
+    background-image: url(../images/fjord.jpg);
+    background-size: cover;
+}
+#tour4{
+    background-image: url(../images/road.jpg);
+    background-size: cover;
+}
+@media (min-width: 768px){
+    .section-tour .tour-choice{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px,1fr));
+        grid-column-gap:20px; 
+        grid-row-gap:20px;
+    }
+}
+.tour-choice .tour-box{
+    display: flex;
+    padding:50px 30px 0;
+    font-weight: bold;
+    box-shadow: -10px -10px 10px 5px rgba(8, 6, 6, 0.324),
+                10px 10px 10px 5px rgba(9, 5, 5, 0.408);
+    transition: all 1s ease-in-out;
+}
+.tour-choice .tour-box:hover{
+-webkit-transform: translateZ(50px);
+transform: perspective(800px) translateZ(50px);
+}
+.tour-choice .tour-box img{
+    margin-right: 50px;
+    height: 60px;
+
+}
+@media (max-width: 1000px) {
+    .tour-choice .tour-box {
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+        
+    }
+    .tour-choice .tour-box img{
+        margin: 0 auto 30px ;
+        width:80px;
+        justify-content:center;
+
+        
+    }
+}
+.tour-choice .tour-box h3{
+    color: white;
+    margin-bottom: 20px;
+    font-size:20px;
+    letter-spacing:2px;
+    
+}
+.tour-choice .tour-box p{
+    color:aliceblue;
+    margin-bottom: 20px;
+    line-height:2;
+    font-size:15px;
+}
+/* ******************************************* */
+/* <!-- BOOK WITH CONFIDENCE --> */
+.booking{
+    padding-top:var(--section-padding);
+    padding-bottom:var(--section-padding);
+    height:600px;
+    position: relative;
+    background-image: url(../images/bookbg.jpg);
+    background-size: cover;
+    display: flex;
+    text-align: center;
+    overflow:hidden;
+}
+.booking::before{
+    content:"";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#34518471;
+}
+.booking .image,
+.booking .text{
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+.booking .image img{
+    width: 35%;
+    height: auto;
+    text-align: center; 
+}
+.booking .text{
+    padding:50px;
+    background-color:#000000a1;
+    color:var(--text-color) ;
+    text-align: left;
+}
+.booking .text h2 , p , ul{
+    padding:10px;
+}
+.booking .text ul li{
+    padding:5px;
+}
+.booking .text i{
+    padding-right:20px;
+}
+@media(max-width:1000px){
+    .booking{
+        display:block;
+        height:100%;
+    }
+    .booking .image img,
+    .booking .text{
+        justify-content:center;
+        text-align:center;
+    }
+}
+/* <!--MOST POPULAR NORWAY TOURS
+ TOUR OPTIONS  --> */
+.section-options{
+    padding-top:var(--section-padding);
+    padding-bottom:var(--section-padding);
+    background-color:#f6f8fd;
+}
+.section-options .shuffle{
+    display: flex;
+    justify-content:center;
+}
+.section-options .shuffle li{
+    padding: 40px;
+    color: var(--text-color);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.section-options .shuffle li.active,
+.section-options .shuffle li:hover{
+    color:#020f34
+}
+.section-options .img-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    
+}
+.img-container .box{
+    position: relative;
+    overflow: hidden;
+
+}
+@media (min-width: 768px){
+    .img-container .box{
+        flex-basis: 50%; 
+    }
+}
+@media (min-width: 1199px){
+    .img-container .box{
+        flex-basis: 25%; 
+    }
+}
+.img-container .box img{
+    max-width:100%;
+    width:550px;
+    height:450px;
+    transition:0.3s;
+}
+.img-container .box .caption{
+    position:absolute;
+    left:0;
+    padding:20px;
+    bottom:-100%;
+    width:100%;
+    transition:0.3s;
+    background-color:aliceblue;
+}
+.img-container .box:hover .caption{
+    bottom:0;
+}
+.img-container .box:hover img{
+    transform:rotate(3deg) scale(1.1);
+}
+.img-container .box .caption h4{
+    color:#020f34;
+}
+.img-container .box .caption p{
+    padding:10px 0;
+    color: var(--text-color);
+    font-weight: bold;
+}
+.section-options .more{
+    background-color: var(--text-color);
+    color:var(--main-color);
+    padding:10px 20px;
+    border-radius: 8%;
+    width:fit-content;
+    display: block;
+    margin:30px auto;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* Video section */
+.video{
+    position: relative;
+    max-height: 100%;
+    overflow: hidden;
+    display:flex;
+}
+.video::before{
+    content:"";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.132);
+}
+.video video{
+    width: 100%;
+    
+}
+.video .text{
+    position:absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    background-color:rgba(0, 0, 0, 0.548);
+    color: var(--text-color);
+    text-align: center;
+    line-height:2;
+}
+.video .text h2{
+    font-weight: bold;
+    font-size:30px;
+}
+.video .text p{
+    font-weight: bold;
+    font-size:20px;
+}
+.video .text button{
+    margin-top:10px;
+    background-color: var(--text-color);
+    padding: 10px;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size:15px;
+}
+/* ABOUT US */
+.about-section{
+    /* height:100%; */
+    position: relative;
+    display: flex;
+    text-align: center;
+    margin:0;
+    overflow: hidden;
+}
+.about-section .about-container{
+    background-color:var(--main-color);
+    color:var(--text-color);
+    display: flex;
+}
+.about-section .heading{
+    width:45%;
+    text-align:left;
+    padding:150px 20px;
+    font-size: 20px;
+    line-height:2;
+}
+.about-section .heading button{
+    background-color:var(--text-color);
+    color:var(--main-color);
+    padding:10px;
+    margin-top:10px;
+    border:1px ridge var(--text-color)
+}
+.about-section .team-image{
+    width:45%;
+}
+.about-section img{
+    max-width:100%;
+    width:490px;
+    height:430px;
+    position: relative;
+    bottom:-100px;
+}
+.about-section .facts{
+    background-color:var(--text-color);
+    color:var(--main-color);
+    width:35%;
+    padding-top: 70px;
+    line-height:2;
+    
+}
+.about-section .facts h4{
+    font-size:20px;
+    font-weight: bold;
+}
+@media (max-width: 1000px){
+    .about-section{
+        display:grid;
+    }
+    .about-container{
+        display:flex
+    }
+    .about-section .heading{
+        width: 50%; 
+    }
+    .about-section .team-image{
+        width: 50%; 
+    }
+    .about-section .facts{
+        width: 100%; 
+    }
+}
+/* <!-- REVIEWS    --> */
+.reviews-section{
+    padding-top:var(--section-padding);
+    padding-bottom:var(--section-padding);
+    display: flex;
+    background-color:var(--text-color);
+    position: relative;
+}
+.reviews-section::before{
+    content:"";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.468);
+}
+.reviews-section .container{
+    width:90%;
+    text-align: center;
+    color: aliceblue;
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.reviews-section .container .box{
+    padding: 80px;
+    font-size: 30px;
+    line-height:1.5;
+
+}
+@media (max-width: 1000px){
+    .reviews-section .container .box{
+        flex-basis: 100%; 
+        padding:10px;
+    }
+}
+/* <!-- EXPLORING NORWAY --> */
+.expo-section{
+    padding-top:var(--section-padding);
+    padding-bottom:var(--section-padding);
+    background-color:#03216d;
+    overflow:hidden;
+
+}
+.expo-section .container{
+    width:100%;
+    display: flex;
+    justify-content:space-between;
+    position:relative;
+    flex-wrap: wrap;
+
+}
+
+.expo-section .text{
+    padding-top: 50px;
+    max-width:60%;
+    color:#f6f8fd;
+    transform: translateX(50px);
+    position:relative;
+    flex-wrap: wrap;
+}
+
+.expo-section .text h2{
+    text-align: center;
+    margin-bottom:20px;
+    font-weight: bold;
+}
+.expo-section .text p{
+    text-align: center;
+    font-size: 20px;
+    line-height:1.5;
+    margin-bottom:20px;
+    
+}
+.expo-section .text ul{
+    font-size: 20px;
+    max-width:100%;
+}
+.expo-section .text ul li{
+    padding-bottom:10px;
+    
+}
+.expo-section .text ul li i{
+    padding-right:10px;
+}
+.expo-section .advice{
+    padding:20px ;
+    margin-right: 20px;
+    background-color: #dedfe160;
+    position:relative;
+    width:fit-content;
+}
+
+.expo-section .advice h2{
+    margin-bottom:20px;
+    font-weight: bold;
+    text-align: center;
+    color:#f6f8fd;
+    
+}
+.expo-section .advice p{
+    text-align: center;
+    color:#f6f8fd;
+    text-transform:lowercase;
+    font-size:20px;
+}
+.expo-section .box {
+    background-color: #f6f8fd;
+    margin:20px 0 ;
+    display: flex;
+    /* position:relative; */
+    max-width: 400px;
+}
+.expo-section .box-text{
+    color: #000000;
+    margin:20px;
+    
+}
+.expo-section .box .box-text p{
+    color: #000000;
+    text-align: left;
+    text-transform:lowercase;
+    font-size:15px;
+    /* max-width: 50%; */
+}
+.expo-section .box img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin:15px 5px;
+    position: relative;
+}
+@media (max-width:1000px){
+    .expo-section .container{
+        display: grid;
+        text-align:center;
+        justify-content:center;
+        
+    }
+    .expo-section .advice{
+        margin-left:250px;
+        justify-content: center;
+    }
+    .expo-section .text{
+        max-width: 90%;
+        margin-bottom:40px;
+    }
+}
+/* <!-- CONTACT US --> */
+.contact-us .container{
+    width:65%;
+	overflow: hidden;
+    padding-top:var(--section-padding);
+    padding-bottom:var(--section-padding);
+    display:flex;
+    justify-content:space-between;
+}
+.contact-us{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.contact-us .heading{
+    padding:0 50px ;
+    width:1500px;
+} 
+.contact-us .chat-box{
+    display: flex;
+    justify-content:center;
+    text-align:center;
+}
+.contact-us p{
+    color:#0a296daa;
+}
+.contact-us .heading h2 ,
+.contact-us .heading h4
+{
+    text-align:center;
+    color:#0a296d;
+}
+.contact-us .heading p{
+    text-align:center;
+    font-size:20px;
+}
+.contact-us .chat-box .chat,
+.contact-us .chat-box .call {
+    width: 50%;
+}
+.contact-us .chat-box i {
+    margin: 10px;
+    color:var(--text-color)
+}
+.contact-us .chat-box p {
+    font-size: 18px;
+}
+.contact-us .chat-box button {
+    padding: 10px 30px;
+    border:none;
+    border-radius: 10px;
+    background-color:var(--text-color)
+}
+/* ------------------------- */ 
+.user-input form{
+    flex-basis: 50%;
+    display: block;
+    position: relative;
+    
+}
+.user-input .form label{
+    margin-bottom:5px;
+    display: block;
+    color:#0a296daa;
+}
+.user-input .form input[type="text"] {
+	margin-bottom:5px;
+    width: 500px;
+    height: 40px;
+    padding: 5px;
+    border: 2px solid #0a296daa;
+}
+.user-input .form input[attr="placeholder"]{
+    color:#0f1f41;
+    font-weight: bold;
+}
+.user-input .form textarea {
+	color:#0a296d;
+	padding: 10px;
+	width: 500px;
+	height: 150px;
+    border: 2px solid #0a296daa;
+}
+
+.user-input .form input[type="submit"] {
+	color: #fff;
+	margin-top: 20px;
+    float: right;
+    padding: 10px 30px;
+    border:none;
+    border-radius: 20px;
+    background-color:var(--text-color)
+}
+@media (max-width:1000px){
+    .contact-us .container{
+        display: block;
+        width:100%;
+    }
+    .contact-us .heading,
+    .contact-us .user-input{
+        width:100%;
+        margin-top:50px;
+    }
+    .user-input .form input[type="submit"] {
+        display: block;
+        position: absolute;
+}
+.contact-us .chat-box .chat p,
+.contact-us .chat-box .call p {
+    text-align: center;
+    padding:10px 67px;
+}
+}
+/* FOOTER  */
+footer{
+    background-color: var(--main-color);
+    padding-top:var(--section-padding);
+    padding-bottom:var(--section-padding);
+    color:#f6f8fd;
+    text-align:center;
+    justify-content:center;
+    font-size:20px;
+}
+footer .container{
+    width:75%; 
+    margin: 0 auto;
+}
+/* ************** */
+footer .destination ul{
+    border-bottom: 1px solid #f6f8fd;
+    padding:50px;
+    text-align:center;
+}
+footer .destination ul li{
+    display:inline-block;
+    font-size:25px;
+    
+}
+footer .destination ul li::after{
+    content: " . ";
+}
+footer .destination ul li:last-child:after{
+    content: "  ";
+}
+/* ************** */
+footer .links{
+    border-bottom: 1px solid #f6f8fd;
+    padding-bottom:50px;
+    flex-wrap: wrap;
+}
+footer .footer-links {
+    display: inline-block;
+    margin-top:50px;
+    padding-left: 35px;
+    text-align: left;
+
+}
+/* ************** */
+.pay{
+    display: flex;
+    justify-content:space-around;
+    border-bottom: 1px solid #f6f8fd;
+    padding:30px;
+}
+.pay .parta, .pay .partb, .pay .partc{
+    padding: 50px;
+}
+.pay .parta ul li{
+    display: inline-block;
+
+}
+.pay .partb a, 
+.pay .partc i, 
+.pay .partc span{
+    color:var(--text-color)
+}
+/* ************** */
+.copy{
+    color: #f6f8fda7;
+    margin-top: 30px;
+    margin-bottom:0;
+    padding-bottom:0;
+}
+@media (max-width:1000px){
+    footer .container{
+        width: 100%;
+    }
+    footer .links ul li{
+        display:grid;
+        
+    }
+    .pay .parta ul li{
+        display:inline-block;
+    }
+}
