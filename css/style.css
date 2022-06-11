@@ -27,19 +27,7 @@ ul{
     margin-left: auto;
     margin-right: auto;
 }
-@media (min-width: 768px) {
-    .container{
-        width: 750px;
-    }
-} 
-@media (min-width: 992px) {
-    .container{
-        width: 1070px;
-    }
-    header nav  .tooglebar{
-        display: none;
-    }
-}
+
 
 :root{
     --main-color:#020f34;
@@ -124,11 +112,24 @@ header .logo img{
     width:70px;
 
 }
-header span{
+header .norway{
     color: var(--text-color);
     text-decoration:none;
     display: inline-block;
     font-size:20px;
+}
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--text-color)
 }
 header nav{
     flex:1;
@@ -136,21 +137,14 @@ header nav{
     align-items: center;
     justify-content: flex-end;
 }
-header nav  .tooglebar{
-    color: var(--text-color);
-    font-size:20px;
 
-}
+
+
 header nav ul{
     display: flex;
     
 }
-@media (max-width: 1000px){
-    header nav ul{
-        display: none;
-        
-    }
-    header nav .tooglebar:hover + ul{
+header nav .menu-icon:hover + ul{
         display: flex;
         flex-direction: column;
         position:absolute;
@@ -158,10 +152,10 @@ header nav ul{
         left:0;
         width:100%;
     }
-    header nav .tooglebar + ul li a{
-        padding:10px;
-    }
+header nav .menu-icon + ul li a{
+    padding:20px;
 }
+
 header nav ul li a{
     text-decoration: none;
     display:block;
@@ -170,12 +164,25 @@ header nav ul li a{
     transition:0.3s;
     color: var(--text-color);
     z-index: 9;
+    position: relative;
 }
 header nav ul li a.active,
 header nav ul li a:hover{
-    color:#020f34;
-    border-bottom: 3px solid #020f34;
-    z-index: 3;
+    color:#4e0afb;
+}
+/* how to create line under active class  */
+header nav ul li a.active::after,
+header nav ul li a:hover::after{
+    transition:0.3s;
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: #4e0afb;
+    top:73px;
+    width:calc(100% - 20px);
+    left: 10px;
+    margin:auto;
+    z-index: 9;
 }
 header .form{
     width: 40px;
@@ -241,17 +248,7 @@ header .form i{
     transform: translateY(-50%);
     font-weight: bold;
 }
-@media (max-width: 1000px){
-    .landing .text{
-        width:100%;
-    }
-    .landing .text .content{
-        max-width: 100%;
-    }
-    .landing .change-background{
-        display:none;
-    }
-}
+
 .landing .fa-angle-left{
     left:50px;
 }
@@ -303,14 +300,7 @@ header .form i{
     background-image: url(../images/road.jpg);
     background-size: cover;
 }
-@media (min-width: 768px){
-    .section-tour .tour-choice{
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(450px,1fr));
-        grid-column-gap:20px; 
-        grid-row-gap:20px;
-    }
-}
+
 .tour-choice .tour-box{
     display: flex;
     padding:50px 30px 0;
@@ -328,21 +318,7 @@ transform: perspective(800px) translateZ(50px);
     height: 60px;
 
 }
-@media (max-width: 1000px) {
-    .tour-choice .tour-box {
-        display:flex;
-        flex-direction: column;
-        text-align: center;
-        
-    }
-    .tour-choice .tour-box img{
-        margin: 0 auto 30px ;
-        width:80px;
-        justify-content:center;
 
-        
-    }
-}
 .tour-choice .tour-box h3{
     color: white;
     margin-bottom: 20px;
@@ -404,17 +380,7 @@ transform: perspective(800px) translateZ(50px);
 .booking .text i{
     padding-right:20px;
 }
-@media(max-width:1000px){
-    .booking{
-        display:block;
-        height:100%;
-    }
-    .booking .image img,
-    .booking .text{
-        justify-content:center;
-        text-align:center;
-    }
-}
+
 /* <!--MOST POPULAR NORWAY TOURS
  TOUR OPTIONS  --> */
 .section-options{
@@ -447,16 +413,7 @@ transform: perspective(800px) translateZ(50px);
     overflow: hidden;
 
 }
-@media (min-width: 768px){
-    .img-container .box{
-        flex-basis: 50%; 
-    }
-}
-@media (min-width: 1199px){
-    .img-container .box{
-        flex-basis: 25%; 
-    }
-}
+
 .img-container .box img{
     max-width:100%;
     width:550px;
@@ -579,10 +536,9 @@ transform: perspective(800px) translateZ(50px);
 }
 .about-section img{
     max-width:100%;
-    width:490px;
     height:430px;
     position: relative;
-    bottom:-100px;
+    bottom:-125px;
 }
 .about-section .facts{
     background-color:var(--text-color);
@@ -596,23 +552,7 @@ transform: perspective(800px) translateZ(50px);
     font-size:20px;
     font-weight: bold;
 }
-@media (max-width: 1000px){
-    .about-section{
-        display:grid;
-    }
-    .about-container{
-        display:flex
-    }
-    .about-section .heading{
-        width: 50%; 
-    }
-    .about-section .team-image{
-        width: 50%; 
-    }
-    .about-section .facts{
-        width: 100%; 
-    }
-}
+
 /* <!-- REVIEWS    --> */
 .reviews-section{
     padding-top:var(--section-padding);
@@ -646,12 +586,7 @@ transform: perspective(800px) translateZ(50px);
     line-height:1.5;
 
 }
-@media (max-width: 1000px){
-    .reviews-section .container .box{
-        flex-basis: 100%; 
-        padding:10px;
-    }
-}
+
 /* <!-- EXPLORING NORWAY --> */
 .expo-section{
     padding-top:var(--section-padding);
@@ -748,37 +683,23 @@ transform: perspective(800px) translateZ(50px);
     margin:15px 5px;
     position: relative;
 }
-@media (max-width:1000px){
-    .expo-section .container{
-        display: grid;
-        text-align:center;
-        justify-content:center;
-        
-    }
-    .expo-section .advice{
-        margin-left:250px;
-        justify-content: center;
-    }
-    .expo-section .text{
-        max-width: 90%;
-        margin-bottom:40px;
-    }
-}
+
 /* <!-- CONTACT US --> */
 .contact-us .container{
-    width:65%;
+    width:75%;
 	overflow: hidden;
     padding-top:var(--section-padding);
     padding-bottom:var(--section-padding);
     display:flex;
-    justify-content:space-between;
+    margin: auto;
+    justify-content:center;
 }
 .contact-us{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .contact-us .heading{
     padding:0 50px ;
-    width:1500px;
+    width:50%;
 } 
 .contact-us .chat-box{
     display: flex;
@@ -816,10 +737,10 @@ transform: perspective(800px) translateZ(50px);
     background-color:var(--text-color)
 }
 /* ------------------------- */ 
-.user-input form{
+.user-input{
     flex-basis: 50%;
     display: block;
-    position: relative;
+    /* position: relative; */
     
 }
 .user-input .form label{
@@ -829,19 +750,20 @@ transform: perspective(800px) translateZ(50px);
 }
 .user-input .form input[type="text"] {
 	margin-bottom:5px;
-    width: 500px;
+    width: 100%;
     height: 40px;
     padding: 5px;
     border: 2px solid #0a296daa;
 }
-.user-input .form input[attr="placeholder"]{
+.user-input .form input[type="text"]{
     color:#0f1f41;
     font-weight: bold;
+    width: 100%;
 }
 .user-input .form textarea {
 	color:#0a296d;
 	padding: 10px;
-	width: 500px;
+	width: 100%;
 	height: 150px;
     border: 2px solid #0a296daa;
 }
@@ -855,26 +777,7 @@ transform: perspective(800px) translateZ(50px);
     border-radius: 20px;
     background-color:var(--text-color)
 }
-@media (max-width:1000px){
-    .contact-us .container{
-        display: block;
-        width:100%;
-    }
-    .contact-us .heading,
-    .contact-us .user-input{
-        width:100%;
-        margin-top:50px;
-    }
-    .user-input .form input[type="submit"] {
-        display: block;
-        position: absolute;
-}
-.contact-us .chat-box .chat p,
-.contact-us .chat-box .call p {
-    text-align: center;
-    padding:10px 67px;
-}
-}
+
 /* FOOTER  */
 footer{
     background-color: var(--main-color);
@@ -945,15 +848,199 @@ footer .footer-links {
     margin-bottom:0;
     padding-bottom:0;
 }
-@media (max-width:1000px){
+
+@media (min-width: 992px) {
+  
+}
+@media (min-width: 768px){
+    .section-tour .tour-choice{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px,1fr));
+        grid-column-gap:20px; 
+        grid-row-gap:20px;
+    }
+    .img-container .box{
+        flex-basis: 50%; 
+    }
+    header nav  .menu-icon{
+        display: none;
+
+    }
+
+}
+@media (max-width:767px) {
+    .nav-links {
+        position: absolute;
+        left: -100%;
+        top: 5.8rem;
+        flex-direction: column;
+        background-color:#0d0c0cd9;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.5s ease-in-out;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+        text-align: left;
+        
+    }
+    .nav-links .nav-link{
+        background:none;
+        
+    }
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 1rem 0;
+        
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        color:var(--text-color);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .expo-section .text {
+        text-align: center;
+    }
+    .about-section .about-container{
+        display: block;
+    }
+    .about-section{
+        display:grid;
+        margin: auto;
+    }
+    .about-section .heading{
+        width: 100%; 
+    }
+    .about-section .team-image{
+        width: 100%; 
+    }
+    .about-section img{
+        position: relative;
+        bottom:-5px;
+    }
+    .about-section .facts{
+        width: 100%; 
+    }
+    .expo-section .container{
+        display: grid;
+        text-align:center;
+        justify-content:center;
+        
+    }
+    .expo-section .advice{
+        margin:auto;
+        justify-content: center;
+    }
+    .section-options .shuffle {
+        display: block;
+        text-align:center;
+    }
+    .expo-section .text{
+        width: 100%;
+        margin:auto 40px;
+    }
+    .contact-us .chat-box {
+        display: block;
+        width: 100%;
+    }
+    .landing .text{
+        width:100%;
+    }
+    .landing .text .content{
+        max-width: 100%;
+    }
+    .landing .change-background{
+        display:none;
+    }
     footer .container{
         width: 100%;
     }
+
     footer .links ul li{
         display:grid;
         
     }
+    .pay{
+        display:block;
+    }
     .pay .parta ul li{
         display:inline-block;
     }
+    .tour-choice .tour-box {
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+        
+    }
+    .tour-choice .tour-box img{
+        margin: 0 auto 30px ;
+        width:80px;
+        justify-content:center;
+
+        
+    }
+    .booking{
+        display:block;
+        height:100%;
+    }
+    .booking .image img,
+    .booking .text{
+        justify-content:center;
+        text-align:center;
+    }
+    .reviews-section .container .box{
+        flex-basis: 100%; 
+        padding:10px;
+    }
+    .contact-us .container{
+        display: block;
+        width:100%;
+    }
+    .contact-us .heading,
+    .contact-us .user-input {
+        width:100%;
+        margin-top: auto 50px;
+        text-align:center;
+    }
+    .user-input form{
+        margin-top: 40px;
+        padding:40px;
+    }
+    .user-input .form input[type="submit"] {
+        display: block;
+        position: absolute;
+}
+
+.contact-us .chat-box .chat ,
+.contact-us .chat-box .call {
+    text-align: center;
+    width: 100%;
+    top:50%;
+    left:50%;
+    transition:(-50%, -50%);
+}
+}
+
+
+@media (min-width: 1199px){
+    .img-container .box{
+        flex-basis: 25%; 
+    }
+
 }

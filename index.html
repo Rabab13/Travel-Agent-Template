@@ -3,6 +3,8 @@
 
 <head>
 	<meta charset="utf-8" />
+    <!-- First mobile Meta   -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Practice 2</title>
 	<link rel="stylesheet" href="./css/fontawesome.min.css" />
     <link rel="stylesheet" 
@@ -26,16 +28,21 @@
         <a href="#" class="logo">
             <img src="./images/earth.png" alt="logo"/>
             </a>
-            <span>Norway Trips</span>
+            <span class="norway">Norway Trips</span>
         <nav>
-            <i class="fa fa-caret-square-o-left tooglebar"></i>
-            <ul>
-                <li><a class="active" href="#">Home</a></li>
-                <li><a href="#">Service</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Trips</a></li>
-                <li><a href="#">Contacts</a></li>
+            <!-- <i class="fa fa-caret-square-o-left tooglebar"></i> -->
+            <ul class="nav-links">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Trips</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacts</a></li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
             <div class="form">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </div>
@@ -350,7 +357,7 @@
 					<label>Your email *</label>
 					<input placeholder="Enter email address" type="text">
 					<label>Your inquiry *</label>
-					<textarea name="massage"></textarea>
+					<textarea name="massage" type="text"></textarea>
 					<input type="submit" value="Submit">
 				</form>
             </div>
@@ -467,5 +474,6 @@
             
         </div>
     </footer>
+    <script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
