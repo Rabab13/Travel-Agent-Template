@@ -1,0 +1,193 @@
+
+@media (min-width: 768px){
+    .section-tour .tour-choice{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px,1fr));
+        grid-column-gap:20px; 
+        grid-row-gap:20px;
+    }
+    header nav  .menu-icon{
+        display: none;
+
+    }
+
+}
+@media (max-width:767px) {
+    .nav-links {
+        position: absolute;
+        left: -100%;
+        top: 5.8rem;
+        flex-direction: column;
+        background-color:#0d0c0cd9;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.5s ease-in-out;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+        text-align: left;
+        
+    }
+    .nav-links .nav-link{
+        background:none;
+        
+    }
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 1rem 0;
+        
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        color:var(--text-color);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .expo-section .text {
+        text-align: center;
+    }
+    .about-section .about-container{
+        display: block;
+    }
+    .about-section{
+        display:grid;
+        margin: auto;
+    }
+    .about-section .heading{
+        width: 100%; 
+    }
+    .about-section .team-image{
+        width: 100%; 
+    }
+    .about-section img{
+        position: relative;
+        bottom:-5px;
+    }
+    .about-section .facts{
+        width: 100%; 
+    }
+    .expo-section .container{
+        display: grid;
+        text-align:center;
+        justify-content:center;
+        
+    }
+    .expo-section .advice{
+        margin:auto;
+        justify-content: center;
+    }
+    .section-options .img-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section-options .shuffle {
+        display: block;
+        text-align:center;
+    }
+    .expo-section .text{
+        width: 100%;
+        margin:auto 40px;
+    }
+    .contact-us .chat-box {
+        display: block;
+        width: 100%;
+    }
+    .landing .text{
+        width:100%;
+    }
+    .landing .text .content{
+        max-width: 100%;
+    }
+    .landing .change-background{
+        display:none;
+    }
+    footer .container{
+        width: 100%;
+    }
+
+    footer .links ul li{
+        display:grid;
+        
+    }
+    .pay{
+        display:block;
+    }
+    .pay .parta ul li{
+        display:inline-block;
+    }
+    .tour-choice .tour-box {
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+        
+    }
+    .tour-choice .tour-box img{
+        margin: 0 auto 30px ;
+        width:80px;
+        justify-content:center;
+
+        
+    }
+    .booking{
+        display:block;
+        height:100%;
+    }
+    .booking .image img,
+    .booking .text{
+        justify-content:center;
+        text-align:center;
+    }
+    .reviews-section .container .box{
+        flex-basis: 100%; 
+        padding:10px;
+    }
+    .contact-us .container{
+        display: block;
+        width:100%;
+    }
+    .contact-us .heading,
+    .contact-us .user-input {
+        width:100%;
+        margin-top: auto 50px;
+        text-align:center;
+    }
+    .user-input form{
+        margin-top: 40px;
+        padding:40px;
+    }
+    .user-input .form input[type="submit"] {
+        display: block;
+        position: absolute;
+}
+
+.contact-us .chat-box .chat ,
+.contact-us .chat-box .call {
+    text-align: center;
+    width: 100%;
+    top:50%;
+    left:50%;
+    transition:(-50%, -50%);
+}
+}
+
+
+@media (min-width: 1199px){
+    .img-container .box{
+        flex-basis: 25%; 
+    }
+
+}
